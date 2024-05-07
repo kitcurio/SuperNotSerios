@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var controllerColor = Color.red
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            
+            Text("My beloved friends. Sup ya'll.")
+                .font(.headline)
+            Spacer()
+                .frame(maxHeight: 50)
+            
+            Image(systemName: "gamecontroller")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+                .foregroundStyle(controllerColor)
+            Spacer()
+                .frame(maxHeight: 50)
+            ColorPicker("Pick the color or whatever. ", selection: $controllerColor)
         }
         .padding()
     }
